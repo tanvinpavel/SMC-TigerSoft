@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './Layout.css';
 
 const Header = () => {
+  const [navbarToggler, setNavbarToggler] = useState(false); 
     return (
       <header className="header header1">
         <div id="navbar-wrap" className="navbar-wrap">
@@ -10,7 +12,7 @@ const Header = () => {
                 <a href="index.html" className="logo logo-light"><img src="./image/logo.svg" alt="Logo"/></a>
               </div>
 
-              <nav id="dropdown" className="template-main-menu menu-text-dark">
+              <nav id="dropdown" className={navbarToggler ? "template-main-menu menu-text-dark expand" : "template-main-menu menu-text-dark collapse"}>
                 <nav className="mainmenu-nav" id="mobilemenu-popup">
 
                   <div className="close-btn">
@@ -22,7 +24,7 @@ const Header = () => {
                         </div>
                         <button className="mobile-menu-close" data-bs-dismiss="offcanvas"></button>
                     </div> */}
-                    <i className="fal fa-times"></i>
+                    <i className="fal fa-times" onClick={()=>setNavbarToggler((prevState)=>!prevState)}></i>
                   </div>
 
                   <ul className="mainmenu">
@@ -59,14 +61,12 @@ const Header = () => {
                 </nav>
               </nav>
 
-              {/* Hambarger Manue Icon */}
-              <ul className="header-action-items">
+              {/* Hamburger Menu Icon */}
+              <ul className="header-action-items" onClick={()=>setNavbarToggler((prevState)=>!prevState)}>
                 <li className="sidemenu-btn">
-                  {/* <button className="btn-wrap" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenuRight"> */}
                   <span></span>
                   <span></span>
                   <span></span>
-                  {/* </button> */}
                 </li>
               </ul>
             </div>
