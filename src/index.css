@@ -290,7 +290,7 @@ body.loaded .wrapper {
 
 .row {
   margin-left: -15px;
-  margin-right: -15px;
+  /* margin-right: -15px; */
 }
 
 .row > [class*="col"] {
@@ -642,7 +642,8 @@ body.loaded .wrapper {
   width: 350px;
   padding: 85px 40px;
   transition: .7s;
-  overflow: auto;
+  /* overflow: auto; */
+  overflow: hidden;
   z-index: 22;
 }
 
@@ -849,7 +850,7 @@ body.loaded .wrapper {
 
 @media only screen and (max-width: 1199px) {
   .about-wrap .p-l {
-    padding-left: 20px;
+    padding: 0 20px;
   }
 }
 

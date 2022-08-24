@@ -11,7 +11,7 @@ const Service = () => {
             >
               Start Building Within Minutes
             </h1>
-            <div class="row row-25">
+            <div class="row">
               <div class="col-xl-3 col-lg-6 col-md-6">
                 <div
                   class="service-box"
