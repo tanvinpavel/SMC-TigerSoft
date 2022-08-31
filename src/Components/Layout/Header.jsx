@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import './Layout.css';
 
-const Header = () => {
-  const [navbarToggler, setNavbarToggler] = useState(false); 
+const Header = ({headerData, transparent = true}) => {
+  const [navbarToggler, setNavbarToggler] = useState(false);
+  
     return (
-      <header className="header header1">
+      <header className={transparent ? "header header1" : "header header1 header-dark"}>
         <div id="navbar-wrap" className="navbar-wrap">
           <div className="container">
             <div className="navbar-content">
               <div className="site-branding">
-                <a href="index.html" className="logo logo-light"><img src="./image/logo.svg" alt="Logo"/></a>
+                <NavLink to="/" className="logo logo-light"><img src="./image/logo.svg" alt="Logo"/></NavLink>
               </div>
 
-              <nav id="dropdown" className={navbarToggler ? "template-main-menu menu-text-dark expand" : "template-main-menu menu-text-dark collapse"}>
+              <nav id="dropdown" className={navbarToggler ? "template-main-menu menu-text-dark nav-expand" : "template-main-menu menu-text-dark nav-collapse"}>
                 <nav className="mainmenu-nav" id="mobilemenu-popup">
 
                   <div className="close-btn">
@@ -28,30 +30,14 @@ const Header = () => {
                   </div>
 
                   <ul className="mainmenu">
-                    <li className="nav-item">
-                      <a className="scroll" href="index.html">Home</a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="scroll" href="documentation-a.html">Documentation</a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="scroll" href="tutorial.html">Tutorials</a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="scroll" href="tutorial-video.html">Tutorial Video</a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="scroll" href="coming-soon.html">Learn by Code</a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="scroll" href="coming-soon.html">Setup SMC</a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="scroll" href="coming-soon.html">API’s</a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="scroll" href="coming-soon.html">Community</a>
-                    </li>
+                    {
+                      headerData &&
+                      headerData.map(item => 
+                          <li key={Math.random()} className="nav-item">
+                            <NavLink className="scroll" to={item.menu_link}>{item.anchor_Text}</NavLink>
+                          </li>
+                        )
+                    }
                   </ul>
 
                   <div className="entry-buttons">
