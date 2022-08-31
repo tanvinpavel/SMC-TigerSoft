@@ -1,24 +1,27 @@
 import React from 'react';
 
-const Banner = () => {
+const Banner = ({bannerData}) => {
+  console.log(bannerData);
     return (
-        <section class="banner banner-1">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-12">
-                <div class="banner-content">
-                  <div class="entry-content">
-                    <h1
-                      class="entry-title"
-                      data-sal="slide-up"
-                      data-sal-delay="200"
-                      data-sal-duration="800"
-                    >
-                      Build Your Future <br />
-                      with SMC
-                    </h1>
+        <section className="banner banner-1">
+          <div className="container">
+            <div className="row align-items-center">
+              <div className="col-lg-12">
+                <div className="banner-content">
+                  <div className="entry-content">
+                    {
+                      bannerData && bannerData.map(item => <h1
+                          className="entry-title"
+                          data-sal="slide-up"
+                          data-sal-delay="200"
+                          data-sal-duration="800"
+                          key={Math.random()}
+                        >
+                        {item.s_title}
+                      </h1>)
+                    }
                     <p
-                      class="entry-subtitle"
+                      className="entry-subtitle"
                       data-sal="slide-up"
                       data-sal-delay="200"
                       data-sal-duration="800"
@@ -26,10 +29,10 @@ const Banner = () => {
                       Official Developer Resource Center for SMC <br />
                       Blockchain Technology
                     </p>
-                    <div class="entry-buttons">
+                    <div className="entry-buttons">
                       <a
                         href="#"
-                        class="btn-fill"
+                        className="btn-fill"
                         data-sal="slide-up"
                         data-sal-delay="200"
                         data-sal-duration="800"

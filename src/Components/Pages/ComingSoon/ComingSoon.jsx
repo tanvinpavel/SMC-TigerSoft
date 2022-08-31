@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../../Layout/Header';
-import About from './About/About';
 import Banner from './Banner/Banner';
-import CaseStudies from './CaseStudies/CaseStudies';
-import Service from './Service/Service';
-const axios = require('axios');
+import axios from 'axios';
 
-const Home = () => {
+const ComingSoon = () => {
     const [homeData, setHomeData] = useState({});
     
     useEffect(()=>{
@@ -20,16 +17,13 @@ const Home = () => {
         }
       })()
     }, []);
-  
+
     return (
         <>
             <Header headerData={homeData?.menu_item || []}/>
-            <Banner bannerData={homeData?.slider || []}/>
-            <Service serviceData={homeData?.str_Section || []}/>
-            <About aboutData={homeData?.inv_section || []}/>
-            <CaseStudies CaseStudiesData={homeData?.categorized_data || []}/>
+            <Banner/>
         </>
     );
 };
 
-export default Home;
+export default ComingSoon;

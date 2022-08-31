@@ -1,6 +1,6 @@
-.collapse{
-    right: -100% !important;
+.nav-collapse {
+  right: -100% !important;
 }
-.expand{
-    right: 0px !important;
+.nav-expand {
+  right: 0px !important;
 }

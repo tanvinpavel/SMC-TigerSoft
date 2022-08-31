@@ -1,9 +1,26 @@
 import React from 'react';
+// import sal from 'sal.js'
+// import { motion, Variants } from "framer-motion";
 
-const Service = () => {
+// const cardVariants: Variants = {
+//   offscreen: {
+//     y: 300
+//   },
+//   onscreen: {
+//     y: 50,
+//     rotate: -10,
+//     transition: {
+//       type: "spring",
+//       bounce: 0.4,
+//       duration: 0.8
+//     }
+//   }
+// };
+
+const Service = ({serviceData}) => {
     return (
-        <section id="services" class="service-section service-wrap style-1">
-          <div class="container">
+        <section id="services" className="service-section service-wrap style-1">
+          <div className="container">
             <h1
               data-sal="slide-up"
               data-sal-delay="200"
@@ -11,69 +28,87 @@ const Service = () => {
             >
               Start Building Within Minutes
             </h1>
-            <div class="row">
-              <div class="col-xl-3 col-lg-6 col-md-6">
+            <div className="row">
+              <div className="col-xl-3 col-lg-6 col-md-6">
                 <div
-                  class="service-box"
+                  className="service-box"
                   data-sal="slide-up"
                   data-sal-delay="200"
                   data-sal-duration="800"
                 >
-                  <div class="icon"><img src="image/pen.svg" alt="pen" /></div>
+                  <div className="icon"><img src="image/pen.svg" alt="pen" /></div>
                   <h3><a href="coming-soon.html">Read Docs</a></h3>
-                  <p>
-                    Hundreds of Articles Explaining SMC Technology Writen by Our
-                    Staff, Improved & Enriched by Our Community
-                  </p>
+                  {
+                    serviceData.length > 0 ? <p>{serviceData[0].b_text}</p> : <div className="spinner-border text-dark mt-4" role="status"><span className="visually-hidden">Loading...</span></div>
+                  }
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-6 col-md-6">
+
+              <div className="col-xl-3 col-lg-6 col-md-6">
                 <div
-                  class="service-box"
+                  className="service-box"
                   data-sal="slide-up"
                   data-sal-delay="300"
                   data-sal-duration="800"
                 >
-                  <div class="icon">
+                  <div className="icon">
                     <img src="image/setting.svg" alt="pen" />
                   </div>
                   <h3><a href="coming-soon.html">Setup SMC</a></h3>
-                  <p>
-                    Get The Step-by-Step Guidelines To Launching an SMC
-                    Environment No Matter Which Stack You’re Using
-                  </p>
+                  {
+                    serviceData.length > 0 ? <p>{serviceData[1].b_text}</p> : <div className="spinner-border text-dark mt-4" role="status"><span className="visually-hidden">Loading...</span></div>
+                  }
                 </div>
               </div>
+
               <div
-                class="col-xl-3 col-lg-6 col-md-6"
+                className="col-xl-3 col-lg-6 col-md-6"
                 data-sal="slide-up"
                 data-sal-delay="400"
                 data-sal-duration="800"
               >
-                <div class="service-box">
-                  <div class="icon"><img src="image/play.svg" alt="pen" /></div>
+                <div className="service-box">
+                  <div className="icon"><img src="image/play.svg" alt="pen" /></div>
                   <h3><a href="coming-soon.html">See Tutorials </a></h3>
-                  <p>
-                    Video Tutorials for Beginners As Well As Advanced
-                    Practitioners Covering Key Concepts of SMC Blockchain
-                  </p>
+                  {
+                    serviceData.length > 0 ? <p>{serviceData[2].b_text}</p> : <div className="spinner-border text-dark mt-4" role="status"><span className="visually-hidden">Loading...</span></div>
+                  }
                 </div>
               </div>
+
               <div
-                class="col-xl-3 col-lg-6 col-md-6"
+                className="col-xl-3 col-lg-6 col-md-6"
+                data-sal="slide-up"
+                data-sal-delay="400"
+                data-sal-easing="ease-out-back"
+              >
+                <div className="service-box">
+                  <div className="icon"><img src="image/bulb.svg" alt="pen" /></div>
+                  <h3><a href="coming-soon.html">Get Help </a></h3>
+                  {
+                    serviceData.length > 0 ? <p>{serviceData[3].b_text}</p> : <div className="spinner-border text-dark mt-4" role="status"><span className="visually-hidden">Loading...</span></div>
+                  }
+                </div>
+              </div>
+
+              {/* <motion.div
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, amount: 0.8 }}
+                className="col-xl-3 col-lg-6 col-md-6"
                 data-sal="slide-up"
                 data-sal-delay="500"
                 data-sal-duration="800"
+                variants={cardVariants}
               >
-                <div class="service-box">
-                  <div class="icon"><img src="image/bulb.svg" alt="pen" /></div>
+                <div className="service-box">
+                  <div className="icon"><img src="image/bulb.svg" alt="pen" /></div>
                   <h3><a href="coming-soon.html">Get Help </a></h3>
-                  <p>
-                    Find Online Communities Where SMC is Discussed. Find
-                    Like-Minded Builders Who Can Help You Build Your Project
-                  </p>
+                  {
+                    serviceData.length > 0 ? <p>{serviceData[3].b_text}</p> : <div className="spinner-border text-dark mt-4" role="status"><span className="visually-hidden">Loading...</span></div>
+                  }
                 </div>
-              </div>
+              </motion.div> */}
             </div>
           </div>
         </section>
