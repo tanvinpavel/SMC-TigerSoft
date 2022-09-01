@@ -4,7 +4,7 @@ import About from './About/About';
 import Banner from './Banner/Banner';
 import CaseStudies from './CaseStudies/CaseStudies';
 import Service from './Service/Service';
-const axios = require('axios');
+import axios from 'axios';
 
 const Home = () => {
     const [homeData, setHomeData] = useState({});

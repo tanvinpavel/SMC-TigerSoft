@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from '../../Layout/Header';
-import VideoTutorialBody from './VideoTutorialBody/VideoTutorialBody';
-import "../../../../node_modules/slick-carousel/slick/slick.css"; 
-import "../../../../node_modules/slick-carousel/slick/slick-theme.css";
+import Action from './Action/Action';
+import Instructions from './Instructions/Instructions';
 import Banner from '../../Shared/Banner';
 
-const VideoTutorial = () => {
+const SMCApis = () => {
     const [homeData, setHomeData] = useState({});
     
     useEffect(()=>{
@@ -20,14 +19,15 @@ const VideoTutorial = () => {
         }
       })()
     }, []);
-
+  
     return (
         <>
             <Header headerData={homeData?.menu_item || []}/>
-            <Banner type="tutorials"/>
-            <VideoTutorialBody/>
+            <Banner type="setupEnvironment"/>
+            <Instructions/>
+            <Action/>
         </>
     );
 };
 
-export default VideoTutorial;
+export default SMCApis;
